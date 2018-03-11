@@ -19,9 +19,11 @@ while hp0 > 0:
                     decisao = int(input('1-Atacar   2-Defender    3-Fugir     4-Item: '))
                     if decisao == 1:
                         combate = int(randint(1, 20))
-                        if combate < 10:
+                        if combate < 10 and combate>4:
                             hp_mob1 = hp_mob1 - 5
                             print('Você deu 5 de dano')
+                        elif combate < 3:
+                            print('Errou!')
                         elif combate > 10 and combate < 20:
                             hp_mob1 = hp_mob1 - 10
                             print('Você deu 10 de dano')
@@ -79,9 +81,11 @@ while hp0 > 0:
                 decisao = int(input('1-Atacar   2-Defender    3-Fugir     4-Item: '))
                 if decisao == 1:
                     combate = int(randint(1, 20))
-                    if combate < 10:
+                    if combate < 10 and combate>4:
                         hp_mob2 = hp_mob2 - 5
                         print('Você deu 5 de dano')
+                    elif combate < 3:
+                        print('Errou!')
                     elif combate > 10 and combate < 20:
                         hp_mob2 = hp_mob2 - 10
                         print('Você deu 10 de dano')
