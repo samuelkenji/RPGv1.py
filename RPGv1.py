@@ -68,6 +68,7 @@ while hp0 > 0:
             elif trap>15 and trap<100:
                 print('Você achou uma poção!')
                 pot=pot+1
+                print('quental lixo')
             else:
                 print('Você achou duas poções!')
                 pot=pot+2
@@ -122,4 +123,4 @@ while hp0 > 0:
 
 print('Você perdeu')
 print(nome)
-print('{} pontos'.format(pts))
+print('{} pontos'.format(pts)
