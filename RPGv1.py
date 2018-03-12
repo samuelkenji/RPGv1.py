@@ -106,8 +106,8 @@ while hp0 > 0:
                         print('Parece que algúem não quer que você fuja')
                     else:
                         print('Você escapou com sucesso')
-                        fuga = 1
-                        if fuga == 1:
+                        fugiu = 1
+                        if fugiu == 1:
                             break
                 elif decisao == 4:
                     print('Qual item você deseja usar?')
