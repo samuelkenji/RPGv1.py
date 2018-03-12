@@ -123,4 +123,3 @@ while hp0 > 0:
 print('Você perdeu')
 print(nome)
 print('{} pontos'.format(pts))
-teste
