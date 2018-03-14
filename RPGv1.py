@@ -12,28 +12,38 @@ bif=(input('Você entra na masmorra e logo se depara com uma bifurcação.\nDese
 while hp0 > 0:
     if bif=='esquerda' or bif=='Esquerda':
             mob_encounter=int(randint(0,100))
+            ataque_mob=randint(1,10)
             if mob_encounter<35:
                 #fuga==False
                 print('Um inimigo se aproxima')
                 while hp_mob1 > 0:
+                    print('Mob: {}  Você: {}'.format(hp_mob1,hp0))
                     decisao = int(input('1-Atacar   2-Defender    3-Fugir     4-Item: '))
                     if decisao == 1:
                         combate = int(randint(1, 20))
                         if combate < 10 and combate>4:
                             hp_mob1 = hp_mob1 - 5
                             print('Você deu 5 de dano')
+                            print('O inimigo ataca de volta te dando {} de dano.'.format(ataque_mob))
+                            hp0=hp0-ataque_mob
                         elif combate < 3:
                             print('Errou!')
+                            print('O inimigo ataca de volta te dando {} de dano'.format(ataque_mob))
+                            hp0=hp0-ataque_mob
                         elif combate > 10 and combate < 20:
                             hp_mob1 = hp_mob1 - 10
                             print('Você deu 10 de dano')
+                            print('O inimigo ataca de volta te dando {} de dano'.format(ataque_mob))
+                            hp0=hp0-ataque_mob
                         else:
                             hp_mob1 = hp_mob1 - 20
                             print('Ataque crítico! 20 de dano')
+                            print('O inimigo ataca de volta te dando {} de dano'.format(ataque_mob))
+                            hp0=hp0-ataque_mob
                     elif decisao == 2:
                         defesa = int(randint(1, 20))
                         if defesa < 5:
-                            hp1 = hp0 - 5
+                            hp0 = hp0 - 5
                             print('Sua defesa falhou')
                             print('Você levou 5 de dano')
                         else:
@@ -49,7 +59,10 @@ while hp0 > 0:
                                 break
                     elif decisao == 4:
                         print('Qual item você deseja usar?')
-                        print('Inventário:\n    Poção - {}'.format(pot))
+                        inv=int(input('Inventário:\n    1-Poção - {}    2-Voltar'.format(pot)))
+                            if inv==1:
+                                hp0=hp0+25
+                                print('Você recuperou 25 de vida')
                 if fugiu==1:
                     print('Você ganhou 100 pontos!')
                     pts=pts+100
