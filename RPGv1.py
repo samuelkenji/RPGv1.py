@@ -1,8 +1,6 @@
 from random import randint
 hp0=100
-hp_mob1=50
-hp_mob2=35
-pot=0
+pot=1
 pts=0
 fugiu=0
 
@@ -14,7 +12,7 @@ while hp0 > 0:
             mob_encounter=int(randint(0,100))
             ataque_mob=randint(1,10)
             if mob_encounter<35:
-                #fuga==False
+                hp_mob1 = 50
                 print('Um inimigo se aproxima')
                 while hp_mob1 > 0:
                     print('Mob: {}  Você: {}'.format(hp_mob1,hp0))
@@ -60,9 +58,12 @@ while hp0 > 0:
                     elif decisao == 4:
                         print('Qual item você deseja usar?')
                         inv=int(input('Inventário:\n    1-Poção - {}    2-Voltar'.format(pot)))
-                            if inv==1:
+                        if inv==1:
+                            if pot>=1:
                                 hp0=hp0+25
                                 print('Você recuperou 25 de vida')
+                            else:
+                                print('Você não tem poções')
                 if fugiu==1:
                     print('Você ganhou 100 pontos!')
                     pts=pts+100
@@ -81,7 +82,6 @@ while hp0 > 0:
             elif trap>15 and trap<100:
                 print('Você achou uma poção!')
                 pot=pot+1
-                print('quental lixo')
             else:
                 print('Você achou duas poções!')
                 pot=pot+2
@@ -90,8 +90,10 @@ while hp0 > 0:
     if lago=='s' or lago=="S":
         trap2=int(randint(0,100))
         if trap2<30:
-            print('Era o brilho de um monstro aquàtico!')
+            hp_mob2 = 35
+            print('Era o brilho de um monstro aquático!')
             while hp_mob2 > 0:
+                print('Mob: {}  Você: {}'.format(hp_mob2, hp0))
                 decisao = int(input('1-Atacar   2-Defender    3-Fugir     4-Item: '))
                 if decisao == 1:
                     combate = int(randint(1, 20))
@@ -125,7 +127,13 @@ while hp0 > 0:
                             break
                 elif decisao == 4:
                     print('Qual item você deseja usar?')
-                    print('Inventário:\n    Poção - {}'.format(pot))
+                    inv = int(input('Inventário:\n    1-Poção - {}    2-Voltar'.format(pot)))
+                    if inv == 1:
+                        if pot >= 1:
+                            hp0 = hp0 + 25
+                            print('Você recuperou 25 de vida')
+                        else:
+                            print('Você não tem poções')
             if fugiu == 1:
                 print('Você ganhou 100 pontos!')
                 pts = pts + 100
@@ -136,4 +144,4 @@ while hp0 > 0:
 
 print('Você perdeu')
 print(nome)
-print('{} pontos'.format(pts)
+print('{} pontos'.format(pts))
