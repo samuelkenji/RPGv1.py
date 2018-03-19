@@ -1,11 +1,16 @@
 from random import randint
+import os
+import time
 hp0=100
 pot=1
 pts=0
 fugiu=0
 
 nome=input('Qual seu nome?:')
+time.sleep(0.25)
 bif=(input('Você entra na masmorra e logo se depara com uma bifurcação.\nDeseja ir pela esquerda ou direita?:'))
+time.sleep(0.25)
+
 
 while hp0 > 0:
     if bif=='esquerda' or bif=='Esquerda':
@@ -22,7 +27,9 @@ while hp0 > 0:
                 if hp0 < 0:
                     break
                 print('Mob: {}  Você: {}'.format(hp_mob1,hp0))
+                time.sleep(0.25)
                 decisao = int(input('1-Atacar   2-Defender    3-Fugir     4-Item: '))
+                time.sleep(0.25)
                 if decisao == 1:
                     combate = int(randint(1, 20))
                     if combate < 10 and combate>4:
