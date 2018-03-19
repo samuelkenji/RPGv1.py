@@ -15,8 +15,12 @@ while hp0 > 0:
                 hp_mob1 = 50
             elif mob_encounter>75:
                 hp_mob1=60
+            else:
+                hp_mob1=55
             print('Um inimigo se aproxima')
             while hp_mob1 > 0:
+                if hp0 < 0:
+                    break
                 print('Mob: {}  Você: {}'.format(hp_mob1,hp0))
                 decisao = int(input('1-Atacar   2-Defender    3-Fugir     4-Item: '))
                 if decisao == 1:
@@ -52,6 +56,8 @@ while hp0 > 0:
                     fuga = int(randint(1, 20))
                     if fuga < 4:
                         print('Parece que algúem não quer que você fuja')
+                        print('Você levou 5 de dano')
+                        hp0=hp0 -5
                     else:
                         print('Você escapou com sucesso')
                         fugiu=fugiu+1
@@ -81,12 +87,16 @@ while hp0 > 0:
                 print('Era uma armadilha!')
                 print('Você levou 5 de dano')
                 hp0=hp0-5
+                if hp0 < 0:
+                    break
             elif trap>15 and trap<100:
                 print('Você achou uma poção!')
                 pot=pot+1
             else:
                 print('Você achou duas poções!')
                 pot=pot+2
+    if hp0 < 0:
+        break
     print('Você se depara com um enorme lago')
     lago=input('Ao olhar mais de perto percebe que há um brilho misterioso vindo do fundo dele\nDeseja investigar? S/N')
     if lago=='s' or lago=="S":
@@ -95,8 +105,12 @@ while hp0 > 0:
             hp_mob2 = 35
         elif trap2>75:
             hp_mob2=50
+        else:
+            hp_mob2=55
         print('Era o brilho de um monstro aquático!')
         while hp_mob2 > 0:
+            if hp0 < 0:
+                break
             ataque_mob2=randint(1,15)
             print('Mob: {}  Você: {}'.format(hp_mob2, hp0))
             decisao = int(input('1-Atacar   2-Defender    3-Fugir     4-Item: '))
@@ -131,6 +145,8 @@ while hp0 > 0:
                 fuga = int(randint(1, 20))
                 if fuga < 4:
                     print('Parece que algúem não quer que você fuja')
+                    print('Você levou 5 de dano')
+                    hp0=hp0-5
                 else:
                     print('Você escapou com sucesso')
                     fugiu = 1
@@ -152,7 +168,8 @@ while hp0 > 0:
             print('Você ganhou 200 pontos!')
             pts = pts + 200
 
-
+    if hp0<0:
+        break
 print('Você perdeu')
-print(nome)
-print('{} pontos'.format(pts))
+print(nome,':',pts,'pontos')
+
