@@ -6,8 +6,40 @@ pot=1
 pts=0
 fugiu=0
 
-nome=input('Qual seu nome?:')
-time.sleep(0.25)
+"""Manual do jogo:
+Na hora de fazer suas escolhas sempre veja suas opções
+Seu HP no inicio do jogo será de 100
+O jogador começará com com apenas uma poção nos itens
+O jogador terá as opções de Atacar, Defender, Fugir e utilizar um Item
+Quando o HP do jogador chegar a 0 ele perde o jogo
+Existem mais itens coletáveis ao longo do jogo onde há ou não a chance de encontra-los
+Ao matar um Mob o jogador ganha 200 Pontos e ao fugir com sucesso o jogador ganha 100 pontos
+------------------------------------------------------------------------------------------------------"""
+print ("Desconhecido : Ei você! Precisa de ajuda? Meu nome é Papaco.")
+time.sleep(2)
+print ("Papaco : Qual o seu nome?")
+nome=input('->')
+time.sleep(0.5)
+print ("Papaco : Olá", nome, ",parece que você procura por algo?")
+time.sleep(2)
+print ("Papaco : Pelo jeito você é um forasteiro.")
+time.sleep(2)
+print ("Papaco : Está aqui atrás de que?")
+time.sleep(2)
+print (nome, ": Estou atrás do meu irmão perdido.")
+time.sleep(2)
+print (nome, ": Ele sumiu faz alguns dias e disse que ia para a cidade de Geruddo Valley...")
+time.sleep(3)
+print ("Papaco : Talvez ele possa ter ido pelas masmorras, é o caminho mais rapido para a cidade de Gerudo Valley.")
+time.sleep(3)
+print ("Papaco : As masmorras ficam naquela direção. Apenas tenha cuidado em sua jornada.")
+time.sleep(3)
+print ("Papaco : Existem várias criaturas que moram nas redondezas.")
+time.sleep(2.5)
+print ("Papaco : Por segurança leve minha espada, meu escudo e minha poção.")
+time.sleep(2.5)
+print ("Papaco : Faça bom uso desses equipamentos e boa sorte em sua jornada jovem", nome,".")
+time.sleep(2)
 bif=(input('Você entra na masmorra e logo se depara com uma bifurcação.\nDeseja ir para qual lado?\n1-Esquerda  2-Direita:'))
 time.sleep(0.25)
 
