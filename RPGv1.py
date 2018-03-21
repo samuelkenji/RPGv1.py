@@ -356,7 +356,7 @@ while hp0 > 0:
     bif2=input('Qual caminho deseja seguir?\n1-Esquerda  2-Direita: ')
     if bif2=='1':
         print('Você chega na floresta. Os raios de luz mal passam por entre as folhas.')
-		time.sleep(0.5)
+	time.sleep(0.5)
         print('Ao olhar no mapa, percebe que está próximo do último lugar que seu irmão disse que iria passar')
         
 print('Você perdeu')
