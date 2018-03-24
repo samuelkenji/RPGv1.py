@@ -264,7 +264,7 @@ while hp0 > 0:
                     else:
                         time.sleep(0.5)
                         print('Você não tem poções')
-        if fugiu == 2:
+        if fugiu2 == 1:
             time.sleep(0.5)
             print('Você ganhou 100 pontos!')
             pts = pts + 100
@@ -356,7 +356,7 @@ while hp0 > 0:
                             pot=pot-1
                         else:
                             print('Você não tem poções')
-            if fugiu == 2:
+            if fugiu2 == 1:
                 time.sleep(0.5)
                 print('Você ganhou 100 pontos!')
                 pts = pts + 100
@@ -470,6 +470,9 @@ while hp0 > 0:
                         time.sleep(0.5)
                         print('Você recuperou 50 de vida')
                         pot2=pot2-1
+                    else:
+                        time.sleep(0.5)
+                        print('Você não tem poções')
         if fugiu3 == 1:
             time.sleep(0.5)
             print('Você ganhou 100 pontos!')
@@ -579,6 +582,9 @@ while hp0 > 0:
                         time.sleep(0.5)
                         print('Você recuperou 50 de vida')
                         pot2=pot2-1
+                    else:
+                        time.sleep(0.5)
+                        print('Você não tem poções')
         if fugiu3 == 1:
             time.sleep(0.5)
             print('Você ganhou 100 pontos!')
@@ -596,7 +602,7 @@ while hp0 > 0:
     time.sleep(4)
     print('Passando ao redor da casa ouço risadas maléficas e alguém chorando lá dentro.')
     time.sleep(3.5)
-    print('Ao parar para ouvir melhor, percebo que a voz de quem estava chorando era a do meu irmão! Ele deve ter sido sequestrado!')
+    print('Ao parar para ouvir melhor, percebo que a voz de quem estava chorando era a do meu irmão! "Ele deve ter sido sequestrado!"')
     time.sleep(3.5)
     print('Logo que me toquei, invadi a casa dando um chute na porta e gritei:')
     time.sleep(3.5)
@@ -659,18 +665,7 @@ while hp0 > 0:
                 time.sleep(0.5)
                 print('Você bloqueou o ataque com sucesso!')
         elif decisao == 3:
-            fuga = int(randint(1, 20))
-            if fuga < 4:
-                print('Parece que algúem não quer que você fuja')
-                time.sleep(0.5)
-                print('Você levou 5 de dano')
-                hp0 = hp0 - 5
-            else:
-                print('Você escapou com sucesso')
-                time.sleep(0.5)
-                fugiu3 = fugiu3 + 1
-                if fugiu3 == 1:
-                    break
+            print('Seu irmão está em grave perigo. Melhor não fazer isso.')
         elif decisao == 4:
             print('Qual item você deseja usar?')
             time.sleep(0.5)
@@ -691,19 +686,19 @@ while hp0 > 0:
                     time.sleep(0.5)
                     print('Você recuperou 50 de vida')
                     pot2 = pot2 - 1
-    if fugiu3 == 1:
-        time.sleep(0.5)
-        print('Você ganhou 100 pontos!')
-        pts = pts + 100
-    else:
-        time.sleep(0.5)
-        print('Você ganhou 200 pontos!')
-        pts = pts + 200
-        pot2 = pot2 + 2
-        time.sleep(0.5)
-        print('Você encontra uma poção grande!')
+                else:
+                    time.sleep(0.5)
+                    print('Você não tem poções')
+    time.sleep(0.5)
+    print('Você ganhou 200 pontos!')
+    pts = pts + 200
+    pot2 = pot2 + 1
+    time.sleep(0.5)
+    print('Você encontra uma poção grande!')
+    time.sleep(1)
 
     print('Um já foi, faltam dois.')
+    time.sleep(1)
 
     trap5 = int(randint(0, 100))
     if trap5 < 30:
@@ -757,18 +752,7 @@ while hp0 > 0:
                 time.sleep(0.5)
                 print('Você bloqueou o ataque com sucesso!')
         elif decisao == 3:
-            fuga = int(randint(1, 20))
-            if fuga < 4:
-                print('Parece que algúem não quer que você fuja')
-                time.sleep(0.5)
-                print('Você levou 5 de dano')
-                hp0 = hp0 - 5
-            else:
-                print('Você escapou com sucesso')
-                time.sleep(0.5)
-                fugiu3 = fugiu3 + 1
-                if fugiu3 == 1:
-                    break
+            print('Seu irmão está em grave perigo. Melhor não fazer isso.')
         elif decisao == 4:
             print('Qual item você deseja usar?')
             time.sleep(0.5)
@@ -789,17 +773,94 @@ while hp0 > 0:
                     time.sleep(0.5)
                     print('Você recuperou 50 de vida')
                     pot2 = pot2 - 1
-    if fugiu3 == 1:
+                else:
+                    time.sleep(0.5)
+                    print('Você não tem poções')
+    time.sleep(0.5)
+    print('Você ganhou 200 pontos!')
+    pts = pts + 200
+    pot2 = pot2 + 1
+    time.sleep(0.5)
+    print('Você encontra uma poção grande!')
+    time.sleep(1)
+
+    print('Sequestrador: Você pode até ter derrotado meus capangas, mas a verdadeira batalha começa agora!')
+    time.sleep(1)
+
+    time.sleep(0.5)
+    hp_boss = 200
+    while hp_boss > 0:
+        if hp0 < 0:
+            break
+        print('Boss: {}  Você: {}'.format(hp_boss, hp0))
         time.sleep(0.5)
-        print('Você ganhou 100 pontos!')
-        pts = pts + 100
-    else:
+        ataque_boss = randint(5, 20)
+        decisao = int(input('1-Atacar   2-Defender    3-Fugir     4-Item:\n-> '))
         time.sleep(0.5)
-        print('Você ganhou 200 pontos!')
-        pts = pts + 200
-        pot2 = pot2 + 2
-        time.sleep(0.5)
-        print('Você encontra uma poção grande!')
+        if decisao == 1:
+            combate = int(randint(1, 20))
+            if combate < 10 and combate > 4:
+                hp_boss = hp_boss - 5
+                print('Você deu 5 de dano')
+                time.sleep(0.5)
+                print('O inimigo ataca de volta te dando {} de dano.'.format(ataque_boss))
+                hp0 = hp0 - ataque_boss
+            elif combate < 3:
+                print('Errou!')
+                time.sleep(0.5)
+                print('O inimigo ataca de volta te dando {} de dano'.format(ataque_boss))
+                hp0 = hp0 - ataque_boss
+            elif combate > 10 and combate < 18:
+                hp_boss = hp_boss - 10
+                print('Você deu 10 de dano')
+                time.sleep(0.5)
+                print('O inimigo ataca de volta te dando {} de dano'.format(ataque_boss))
+                hp0 = hp0 - ataque_boss
+            else:
+                hp_boss = hp_boss - 20
+                print('Ataque crítico! 20 de dano')
+                time.sleep(0.5)
+                print('O inimigo ataca de volta te dando {} de dano'.format(ataque_boss))
+                hp0 = hp0 - ataque_boss
+        elif decisao == 2:
+            defesa = int(randint(1, 20))
+            if defesa < 5:
+                hp0 = hp0 - 5
+                print('Sua defesa falhou')
+                time.sleep(0.5)
+                print('Você levou 5 de dano')
+            else:
+                time.sleep(0.5)
+                print('Você bloqueou o ataque com sucesso!')
+        elif decisao == 3:
+            print('Seu irmão está em grave perigo. Melhor não fazer isso.')
+        elif decisao == 4:
+            print('Qual item você deseja usar?')
+            time.sleep(0.5)
+            inv = int(input(
+                'Inventário:\n    1-Poção (25hp) - {}  2-Poção Grande (50hp) - {}  3-Voltar\n->'.format(pot, pot2)))
+            if inv == 1:
+                if pot >= 1:
+                    hp0 = hp0 + 25
+                    time.sleep(0.5)
+                    print('Você recuperou 25 de vida')
+                    pot = pot - 1
+                else:
+                    time.sleep(0.5)
+                    print('Você não tem poções')
+            if inv == 2:
+                if pot2 >= 1:
+                    hp0 = hp0 + 50
+                    time.sleep(0.5)
+                    print('Você recuperou 50 de vida')
+                    pot2 = pot2 - 1
+                else:
+                    time.sleep(0.5)
+                    print('Você não tem poções')
+    time.sleep(0.5)
+    print('Você ganhou 1000 pontos!')
+    pts = pts + 1000
+
 
 print('Você perdeu')
 print(nome, ':', pts, 'pontos')
