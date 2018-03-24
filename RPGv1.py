@@ -1,5 +1,4 @@
 from random import randint
-import os
 import time
 hp0=100
 pot=1
@@ -8,15 +7,17 @@ fugiu=0
 fugiu2=0
 drop=randint(0,100)
 
-"""Manual do jogo:
-Na hora de fazer suas escolhas sempre veja suas opções
-Seu HP no inicio do jogo será de 100
-O jogador começará com com apenas uma poção nos itens
-O jogador terá as opções de Atacar, Defender, Fugir e utilizar um Item
-Quando o HP do jogador chegar a 0 ele perde o jogo
-Existem mais itens coletáveis ao longo do jogo onde há ou não a chance de encontra-los
-Ao matar um Mob o jogador ganha 200 Pontos e ao fugir com sucesso o jogador ganha 100 pontos
-------------------------------------------------------------------------------------------------------"""
+manual=('Manual do jogo: '
+'-->Na hora de fazer suas escolhas sempre veja suas opções \n'
+'-->Seu HP no inicio do jogo será de 100 \n'
+'-->O jogador começará com uma poção nos itens \n'
+'-->É possível encontrar mais poções no decorrer do jogo\n'
+'-->O jogador terá as opções de Atacar, Defender, Fugir e utilizar um Item \n'
+'-->Quando o HP do jogador chegar a 0 ele perde o jogo \n'
+'-->Ao matar um Mob o jogador ganha 200 Pontos e ao fugir com sucesso, 200 pontos '
+        )
+print(manual)
+print(input('Aperte Enter para iniciar...'))
 print ("Desconhecido : Ei você! Precisa de ajuda? Meu nome é Papaco.")
 time.sleep(2)
 print ("Papaco : Qual o seu nome?")
@@ -344,8 +345,8 @@ while hp0 > 0:
                     pot=pot+1
                     time.sleep(0.25)
                     print('Você encontra uma poção junto ao corpo do seu inimigo')
-    if hp0<0:
-        break
+        if hp0<0:
+            break
         if lago2=='S':
             print('Segurança em primeiro lugar!')
             time.sleep(0.25)
@@ -356,7 +357,7 @@ while hp0 > 0:
     bif2=input('Qual caminho deseja seguir?\n1-Esquerda  2-Direita: ')
     if bif2=='1':
         print('Você chega na floresta. Os raios de luz mal passam por entre as folhas.')
-	time.sleep(0.5)
+        time.sleep(0.5)
         print('Ao olhar no mapa, percebe que está próximo do último lugar que seu irmão disse que iria passar')
         
 print('Você perdeu')
