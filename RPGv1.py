@@ -11,7 +11,7 @@ fugiu2 = 0
 fugiu3 = 0
 drop = randint(0, 100)
 
-manual = ('Manual do jogo: \n'
+'''manual = ('Manual do jogo: \n'
           '-->Na hora de fazer suas escolhas sempre veja suas opções \n'
           '-->Seu HP no inicio do jogo será de 100 \n'
           '-->O jogador começará com uma poção nos itens \n'
@@ -19,6 +19,7 @@ manual = ('Manual do jogo: \n'
           '-->O jogador terá as opções de Atacar, Defender, Fugir e utilizar um Item \n'
           '-->Quando o HP do jogador chegar a 0 ele perde o jogo \n'
           '-->Ao matar um Mob o jogador ganha 200 Pontos e ao fugir com sucesso, 200 pontos \n'
+          '-->Cuidado!! Os inimigos explodem ao serem derrotados!\n'
           '-->Este jogo é livre para todos os públicos'
           )
 print(manual)
@@ -35,10 +36,10 @@ time.sleep(4.5)
 print()
 
 print("Desconhecido : Ei você! Precisa de ajuda? Meu nome é Papaco.")
-time.sleep(2.5)
+time.sleep(2.5)'''
 print("Papaco : Qual o seu nome?")
 nome = input('->').title()
-time.sleep(0.75)
+'''time.sleep(0.75)
 print("Papaco : Olá", nome, ",parece que você procura por algo.")
 time.sleep(2)
 print("Papaco : Pelo jeito você é um forasteiro.")
@@ -59,10 +60,9 @@ print("Papaco : Por segurança leve minha espada, meu escudo e minha poção.")
 time.sleep(2.5)
 print("Papaco : Faça bom uso desses equipamentos e boa sorte em sua jornada jovem", nome, ".")
 time.sleep(2)
-print()
+print()'''
 
-bif = (input(
-    'Então, eu entrei na masmorra e logo me deparo com uma bifurcação.\nDeseja ir para qual lado?\n1-Esquerda  2-Direita:\n->'))
+bif = (input('Então, eu entrei na masmorra e logo me deparo com uma bifurcação.\nDeseja ir para qual lado?\n1-Esquerda  2-Direita:\n->'))
 time.sleep(0.25)
 
 while hp0 > 0:
@@ -145,6 +145,8 @@ while hp0 > 0:
                     else:
                         time.sleep(0.5)
                         print('Você não tem poções')
+        if hp0 < 0:
+            break
         if fugiu == 1:
             time.sleep(0.5)
             print('Você ganhou 100 pontos!')
@@ -264,6 +266,8 @@ while hp0 > 0:
                     else:
                         time.sleep(0.5)
                         print('Você não tem poções')
+        if hp0 < 0:
+            break
         if fugiu2 == 1:
             time.sleep(0.5)
             print('Você ganhou 100 pontos!')
@@ -356,6 +360,8 @@ while hp0 > 0:
                             pot=pot-1
                         else:
                             print('Você não tem poções')
+            if hp0 < 0:
+                break
             if fugiu2 == 1:
                 time.sleep(0.5)
                 print('Você ganhou 100 pontos!')
@@ -473,6 +479,8 @@ while hp0 > 0:
                     else:
                         time.sleep(0.5)
                         print('Você não tem poções')
+        if hp0 < 0:
+            break
         if fugiu3 == 1:
             time.sleep(0.5)
             print('Você ganhou 100 pontos!')
@@ -585,6 +593,8 @@ while hp0 > 0:
                     else:
                         time.sleep(0.5)
                         print('Você não tem poções')
+        if hp0 < 0:
+            break
         if fugiu3 == 1:
             time.sleep(0.5)
             print('Você ganhou 100 pontos!')
@@ -689,6 +699,8 @@ while hp0 > 0:
                 else:
                     time.sleep(0.5)
                     print('Você não tem poções')
+    if hp0 < 0:
+        break
     time.sleep(0.5)
     print('Você ganhou 200 pontos!')
     pts = pts + 200
@@ -776,19 +788,21 @@ while hp0 > 0:
                 else:
                     time.sleep(0.5)
                     print('Você não tem poções')
+    if hp0 < 0:
+        break
     time.sleep(0.5)
     print('Você ganhou 200 pontos!')
     pts = pts + 200
-    pot2 = pot2 + 1
+    pot2 = pot2 + 2
     time.sleep(0.5)
-    print('Você encontra uma poção grande!')
+    print('Você encontra duas poções grandes!')
     time.sleep(1)
 
     print('Sequestrador: Você pode até ter derrotado meus capangas, mas a verdadeira batalha começa agora!')
     time.sleep(1)
 
     time.sleep(0.5)
-    hp_boss = 200
+    hp_boss = 1
     while hp_boss > 0:
         if hp0 < 0:
             break
@@ -857,10 +871,16 @@ while hp0 > 0:
                 else:
                     time.sleep(0.5)
                     print('Você não tem poções')
+    if hp0 < 0:
+        break
     time.sleep(0.5)
     print('Você ganhou 1000 pontos!')
     pts = pts + 1000
 
+    if pts>1400:
+        print('Você ganhou!!')
+        print(nome, ':', pts, 'pontos')
+        quit()
 
 print('Você perdeu')
 print(nome, ':', pts, 'pontos')
