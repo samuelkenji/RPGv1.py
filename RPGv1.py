@@ -18,7 +18,7 @@ manual = ('Manual do jogo: \n'
           '-->É possível encontrar mais poções no decorrer do jogo\n'
           '-->O jogador terá as opções de Atacar, Defender, Fugir e utilizar um Item \n'
           '-->Quando o HP do jogador chegar a 0 ele perde o jogo \n'
-          '-->Ao matar um Mob o jogador ganha 200 Pontos e ao fugir com sucesso, 200 pontos \n'
+          '-->Ao matar um Mob o jogador ganha 200 Pontos e ao fugir com sucesso, 100 pontos \n'
           '-->Cuidado!! Os inimigos explodem ao serem derrotados!\n'
           '-->Este jogo é livre para todos os públicos'
           )
