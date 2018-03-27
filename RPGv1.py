@@ -873,14 +873,26 @@ while hp0 > 0:
                     print('Você não tem poções')
     if hp0 < 0:
         break
-    time.sleep(0.5)
+    time.sleep(0.5)		
     print('Você ganhou 1000 pontos!')
+	time.sleep(0.75)
+	print('Ao derrotar o último sequestrador, você pega uma chave que estava com ele.')
     pts = pts + 1000
 
     if pts>1400:
+		print('JEFFREY!!! - eu gritei, procurando por ele.')
+		time.sleep(1)
+		print(upper.(nome),'!!! - gritou Jeffrey de uma cela.')
+		time.sleep(1)
+		print('Usando a chave que o chefe tinha, abri a cela e o libertei.')
+		time.sleep(1.5)
+		print('Então fomos para casa, imaginando qual seria nossa próxima aventura.')
+		time.sleep(2)
         print('Você ganhou!!')
+		time.sleep(0.5)
         print(nome, ':', pts, 'pontos')
         quit()
 
 print('Você perdeu')
+time.sleep(0.5)
 print(nome, ':', pts, 'pontos')
