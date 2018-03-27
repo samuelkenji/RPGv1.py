@@ -11,7 +11,7 @@ fugiu2 = 0
 fugiu3 = 0
 drop = randint(0, 100)
 
-'''manual = ('Manual do jogo: \n'
+manual = ('Manual do jogo: \n'
           '-->Na hora de fazer suas escolhas sempre veja suas opções \n'
           '-->Seu HP no inicio do jogo será de 100 \n'
           '-->O jogador começará com uma poção nos itens \n'
@@ -36,10 +36,10 @@ time.sleep(4.5)
 print()
 
 print("Desconhecido : Ei você! Precisa de ajuda? Meu nome é Papaco.")
-time.sleep(2.5)'''
+time.sleep(2.5)
 print("Papaco : Qual o seu nome?")
 nome = input('->').title()
-'''time.sleep(0.75)
+time.sleep(0.75)
 print("Papaco : Olá", nome, ",parece que você procura por algo.")
 time.sleep(2)
 print("Papaco : Pelo jeito você é um forasteiro.")
@@ -48,7 +48,7 @@ print("Papaco : Está aqui atrás de que?")
 time.sleep(2.5)
 print('->', nome, ": Estou atrás do meu irmão perdido.")
 time.sleep(2)
-print('->', nome, ": Ele sumiu faz alguns dias, mas antes disse que ia para a de Gerudo Valley...")
+print('->', nome, ": Ele sumiu faz alguns dias, mas antes disse que ia para Gerudo Valley...")
 time.sleep(3)
 print("Papaco : Talvez ele possa ter ido pelas masmorras, é o caminho mais rápido para lá.")
 time.sleep(3)
@@ -60,7 +60,7 @@ print("Papaco : Por segurança leve minha espada, meu escudo e minha poção.")
 time.sleep(2.5)
 print("Papaco : Faça bom uso desses equipamentos e boa sorte em sua jornada jovem", nome, ".")
 time.sleep(2)
-print()'''
+print()
 
 bif = (input('Então, eu entrei na masmorra e logo me deparo com uma bifurcação.\nDeseja ir para qual lado?\n1-Esquerda  2-Direita:\n->'))
 time.sleep(0.25)
@@ -606,6 +606,7 @@ while hp0 > 0:
             pot2 = pot2 + 2
             time.sleep(0.5)
             print('Você encontra duas poções grandes!')
+            time.sleep(0.5)
 
 
     print('Após a luta, percebo que cheguei em Gerudo Valley. Ao caminhar um pouco pela região, vejo uma casa bem velha e escondida por entre os galhos e folhas.')
@@ -802,7 +803,7 @@ while hp0 > 0:
     time.sleep(1)
 
     time.sleep(0.5)
-    hp_boss = 1
+    hp_boss = 135
     while hp_boss > 0:
         if hp0 < 0:
             break
@@ -875,23 +876,27 @@ while hp0 > 0:
         break
     time.sleep(0.5)		
     print('Você ganhou 1000 pontos!')
-	time.sleep(0.75)
-	print('Ao derrotar o último sequestrador, você pega uma chave que estava com ele.')
+    time.sleep(0.75)
+    print('Ao derrotar o último sequestrador, você pega uma chave que estava com ele.')
     pts = pts + 1000
 
-    if pts>1400:
-		print('JEFFREY!!! - eu gritei, procurando por ele.')
-		time.sleep(1)
-		print(upper.(nome),'!!! - gritou Jeffrey de uma cela.')
-		time.sleep(1)
-		print('Usando a chave que o chefe tinha, abri a cela e o libertei.')
-		time.sleep(1.5)
-		print('Então fomos para casa, imaginando qual seria nossa próxima aventura.')
-		time.sleep(2)
-        print('Você ganhou!!')
-		time.sleep(0.5)
-        print(nome, ':', pts, 'pontos')
-        quit()
+    print('JEFFREY!!! - eu gritei, procurando por ele.')
+    time.sleep(1)
+    print(nome.upper(),'!!! - gritou Jeffrey de uma cela.')
+    time.sleep(1)
+    print('Usando a chave que o chefe tinha, abri a cela e o libertei.')
+    time.sleep(1.5)
+    print('Então fomos para casa, imaginando qual seria nossa próxima aventura.')
+    time.sleep(2)
+    print('Você ganhou!!')
+    time.sleep(0.5)
+    print(nome, ':', pts, 'de 2000 pontos.')
+    if pts==2000:
+        print('Parabéns, você consegui a pontuação máxima!')
+    else:
+        print('Talvez da próxima você consiga uma pontuação melhor.')
+    print('FIM')
+    quit()
 
 print('Você perdeu')
 time.sleep(0.5)
